@@ -11,17 +11,12 @@ public class MorseMain {
 
         startMenu();
 
-
-
-
-
-        //this is temp test
-        //while (true) {
-        //    String tempChar = scan.nextLine();
-        //    System.out.println(morseLogic.getCharacter(tempChar.toLowerCase()));
-        //}
+        // this is temp test
+        // while (true) {
+        // String tempChar = scan.nextLine();
+        // System.out.println(morseLogic.getCharacter(tempChar.toLowerCase()));
+        // }
     }
-
 
     private static void startMenu() {
         MorseLogic morseLogic = new MorseLogic();
@@ -53,4 +48,3 @@ public class MorseMain {
         }
     }
 }
-

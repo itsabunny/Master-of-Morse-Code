@@ -4,13 +4,30 @@ import org.junit.Test;
 public class MorseTest {
     @Test
     public void test1(){
+        MorseLogic morseLogic = new MorseLogic();
+
         //Arrange
-        String input = "a";
+        String input = "sos";
 
         //Act
-        //String actual = M
+        String actual = morseLogic.englishToMorse(input);
+        String expected = "... --- ... ";
 
         //Assert
-        //Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void test2(){
+        MorseLogic morseLogic = new MorseLogic();
+
+        //Arrange
+        String input = "... --- ...";
+
+        //Act
+        String actual = morseLogic.morseToEnglish(input);
+        String expected = "sos";
+
+        //Assert
+        Assert.assertEquals(expected,actual);
     }
 }
