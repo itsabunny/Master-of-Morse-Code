@@ -94,25 +94,24 @@ public class MorseLogic {
     }
 
     public String englishToMorse(String englishText) {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         for (int i = 0; i < englishText.length(); i++) {
             String letter = String.valueOf(englishText.charAt(i));
             String morseCode = getCharacter(letter.toLowerCase());
-            output += morseCode;
+            output.append(morseCode);
 
         }
-        return output;
+        return output.toString();
     }
 
     public String morseToEnglish(String morseSequence) {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         String[] morseCharacters = morseSequence.split(" ");
-        for (int i = 0; i < morseCharacters.length; i++) {
-            String morseCharacter = morseCharacters[i];
+        for (String morseCharacter : morseCharacters) {
             String letter = getCharacter(morseCharacter);
-            output += letter;
+            output.append(letter);
         }
-        return output;
+        return output.toString();
     }
 }
 
