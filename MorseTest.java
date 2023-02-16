@@ -30,4 +30,32 @@ public class MorseTest {
         //Assert
         Assert.assertEquals(expected,actual);
     }
+    @Test
+    public void test3(){
+        MorseLogic morseLogic = new MorseLogic();
+
+        //Arrange
+        String input = "!@£";
+
+        //Act
+        String actual = morseLogic.morseToEnglish(input);
+        String expected = "null";
+
+        //Assert
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void test4(){
+        MorseLogic morseLogic = new MorseLogic();
+
+        //Arrange
+        String input = "!@£";
+
+        //Act
+        String actual = morseLogic.englishToMorse(input);
+        String expected = "nullnullnull";
+
+        //Assert
+        Assert.assertEquals(expected,actual);
+    }
 }

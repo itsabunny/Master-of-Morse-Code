@@ -10,11 +10,11 @@ public class MorseMain {
     }
 
     private static void startMenu() {
-        System.out.println("************************************");
-        System.out.println("* 1. Convert English to Morse code *");
-        System.out.println("* 2. Convert Morse code to English *");
-        System.out.println("* Q. Quit the program              *");
-        System.out.println("************************************\n");
+        System.out.println("*************************************");
+        System.out.println("* 1. Convert English to Morse code  *");
+        System.out.println("* 2. Convert Morse code to English  *");
+        System.out.println("* Q. Quit the program               *");
+        System.out.println("*************************************\n");
         String menuChoice = scan.nextLine();
 
         switch (menuChoice.toLowerCase()) {
@@ -35,8 +35,8 @@ public class MorseMain {
         String morseSequence = scan.nextLine();
         String answer = morseLogic.morseToEnglish(morseSequence);
         if(answer.contains("null")){
-            System.out.println("Something in your text was impossible to translate and was replaced by \"null\".\nBut here's my answer:");
-            System.out.println(answer);
+            System.out.println("Something in your text was impossible to translate and was replaced by \"???\".\nBut here's my answer:");
+            System.out.println(answer.replace("null", "???"));
         }else {
             System.out.println(answer);}
         returnToStartMenu();
@@ -48,8 +48,8 @@ public class MorseMain {
         String text = scan.nextLine();
         String answer = morseLogic.englishToMorse(text);
         if(answer.contains("null")){
-            System.out.println("Something in your text was impossible to translate and was replaced by \"null\".\nBut here's my answer:");
-            System.out.println(answer);
+            System.out.println("Something in your text was impossible to translate and was replaced by \"???\".\nBut here's my answer:");
+            System.out.println(answer.replace("null", "???"));
         }else {
             System.out.println(answer);
         }
