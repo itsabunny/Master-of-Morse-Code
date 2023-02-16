@@ -33,7 +33,12 @@ public class MorseMain {
         System.out.println("Write your sentence in Morse code. Write a single space between each letter,");
         System.out.println("and a \" + \" (plus sign surrounded by a single space) between each word):");
         String morseSequence = scan.nextLine();
-        System.out.println(morseLogic.morseToEnglish(morseSequence));
+        String answer = morseLogic.morseToEnglish(morseSequence);
+        if(answer.contains("null")){
+            System.out.println("Something in your text was impossible to translate and was replaced by \"null\".\nBut here's my answer:");
+            System.out.println(answer);
+        }else {
+            System.out.println(answer);}
         returnToStartMenu();
     }
 
@@ -41,9 +46,17 @@ public class MorseMain {
         MorseLogic morseLogic = new MorseLogic();
         System.out.println("Write your English sentence:");
         String text = scan.nextLine();
-        System.out.println(morseLogic.englishToMorse(text));
+        String answer = morseLogic.englishToMorse(text);
+        if(answer.contains("null")){
+            System.out.println("Something in your text was impossible to translate and was replaced by \"null\".\nBut here's my answer:");
+            System.out.println(answer);
+        }else {
+            System.out.println(answer);
+        }
         returnToStartMenu();
     }
+
+
 
     private static void goodbyeMsg() {
         System.out.println("      _____          __  __ ______     ______      ________ _____  ");

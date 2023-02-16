@@ -97,7 +97,7 @@ public class MorseLogic {
         for (int i = 0; i < englishText.length(); i++) {
             String letter = String.valueOf(englishText.charAt(i));
             String morseCode = getCharacter(letter.toLowerCase());
-            output.append(morseCode);
+            output.append(morseCode);   //StringBuilder instead of +=
         }
         return output.toString();
     }
@@ -107,7 +107,7 @@ public class MorseLogic {
         String[] morseCharacters = morseSequence.split(" ");
         for (String morseCharacter : morseCharacters) {
             String letter = getCharacter(morseCharacter);
-            output.append(letter);
+            output.append(letter);   //StringBuilder instead of +=
         }
         return output.toString();
     }
