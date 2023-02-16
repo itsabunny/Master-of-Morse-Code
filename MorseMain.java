@@ -10,7 +10,6 @@ public class MorseMain {
     }
 
     private static void startMenu() {
-        MorseLogic morseLogic = new MorseLogic();
         System.out.println("************************************");
         System.out.println("* 1. Convert English to Morse code *");
         System.out.println("* 2. Convert Morse code to English *");
@@ -19,19 +18,8 @@ public class MorseMain {
         String menuChoice = scan.nextLine();
 
         switch (menuChoice.toLowerCase()) {
-            case "1", "1.", "one" -> {
-                System.out.println("Write your English sentence:");
-                String text = scan.nextLine();
-                System.out.println(morseLogic.englishToMorse(text));
-                returnToStartMeny();
-            }
-            case "2", "2.", "two" -> {
-                System.out.println("Write your sentence in Morse code write a single space between each letter,");
-                System.out.println("and a \" + \" (plus sign surrounded by spaces) between each word):");
-                String morseSequence = scan.nextLine();
-                System.out.println(morseLogic.morseToEnglish(morseSequence));
-                returnToStartMeny();
-            }
+            case "1", "1.", "one" -> menuEnglishToMorse();
+            case "2", "2.", "two" -> menuMorseToEnglish();
             case "q", "quit", "exit" -> goodbyeMsg();
             default -> {
                 System.out.println("Unknown menu choice. Please try again!");
@@ -40,24 +28,38 @@ public class MorseMain {
         }
     }
 
+    private static void menuMorseToEnglish() {
+        MorseLogic morseLogic = new MorseLogic();
+        System.out.println("Write your sentence in Morse code. Write a single space between each letter,");
+        System.out.println("and a \" + \" (plus sign surrounded by a single space) between each word):");
+        String morseSequence = scan.nextLine();
+        System.out.println(morseLogic.morseToEnglish(morseSequence));
+        returnToStartMenu();
+    }
+
+    private static void menuEnglishToMorse() {
+        MorseLogic morseLogic = new MorseLogic();
+        System.out.println("Write your English sentence:");
+        String text = scan.nextLine();
+        System.out.println(morseLogic.englishToMorse(text));
+        returnToStartMenu();
+    }
+
     private static void goodbyeMsg() {
-        System.out.println("      _____          __  __ ______    ______      ________ _____  ");
-        System.out.println("     / ____|   /\\   |  \\/  |  ____|  / __ \\ \\    / /  ____|  __ \\ ");
-        System.out.println("    | |       /  \\  | \\  / | |__    | |  | \\ \\  / /| |__  | |__) |");
-        System.out.println("    | |      / /\\ \\ | |\\/| |  __|   | |  | |\\ \\/ / |  __| |  _  / ");
-        System.out.println("    | |____ / ____ \\| |  | | |____  | |__| | \\  /  | |____| | \\ \\ ");
-        System.out.println("     \\_____/_/    \\_\\_|  |_|______|  \\____/   \\/   |______|_|  \\_\\");
+        System.out.println("      _____          __  __ ______     ______      ________ _____  ");
+        System.out.println("     / ____|   /\\   |  \\/  |  ____|   / __ \\ \\    / /  ____|  __ \\ ");
+        System.out.println("    | |       /  \\  | \\  / | |__     | |  | \\ \\  / /| |__  | |__) |");
+        System.out.println("    | |      / /\\ \\ | |\\/| |  __|    | |  | |\\ \\/ / |  __| |  _  / ");
+        System.out.println("    | |____ / ____ \\| |  | | |____   |  |__| | \\  / | |____| | \\ \\ ");
+        System.out.println("     \\_____/_/    \\_\\_|  |_|______|   \\____/    \\/  |______|_|  \\_\\");
         System.out.println("");
         System.out.println("Goodbye! We hope to see you again soon.");
         System.out.println("Thank you for using our program. Goodbye!");
     }
 
-    private static void returnToStartMeny() {
-        System.out.println("\n**************************");
-        System.out.println("*                        *");
-        System.out.println("* ...and back to menu... *");
-        System.out.println("*                        *");
-        System.out.println("**************************\n\n");
+    private static void returnToStartMenu() {
+        scan.nextLine();
+        System.out.println("\n\n ...and back to menu... \n\n");
         startMenu();
     }
 }

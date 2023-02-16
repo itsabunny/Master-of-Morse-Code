@@ -88,7 +88,6 @@ public class MorseLogic {
         dictionary.put("+"," ");
     }
 
-
     public String getCharacter(String character) {
         return dictionary.get(character);
     }
@@ -99,7 +98,6 @@ public class MorseLogic {
             String letter = String.valueOf(englishText.charAt(i));
             String morseCode = getCharacter(letter.toLowerCase());
             output.append(morseCode);
-
         }
         return output.toString();
     }
