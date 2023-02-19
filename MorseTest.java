@@ -11,7 +11,7 @@ public class MorseTest {
 
         //Act
         String actual = morseLogic.englishToMorse(input);
-        String expected = "... --- ... ";
+        String expected = "... --- ...";
 
         //Assert
         Assert.assertEquals(expected,actual);

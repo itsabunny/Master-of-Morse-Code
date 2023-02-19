@@ -35,8 +35,8 @@ public class MorseMain {
         String morseSequence = scan.nextLine();
         String answer = morseLogic.morseToEnglish(morseSequence);
         if(answer.contains("null")){
-            System.out.println("Something in your text was impossible to translate and was replaced by \"???\".\nBut here's my answer:");
-            System.out.println(answer.replace("null", "???"));
+            System.out.println("Something in your text was impossible to translate and was replaced by \"[???]\".\nBut here's my answer:");
+            System.out.println(answer.replace("null", "[???]"));
         }else {
             System.out.println(answer);}
         returnToStartMenu();
@@ -48,8 +48,8 @@ public class MorseMain {
         String text = scan.nextLine();
         String answer = morseLogic.englishToMorse(text);
         if(answer.contains("null")){
-            System.out.println("Something in your text was impossible to translate and was replaced by \"???\".\nBut here's my answer:");
-            System.out.println(answer.replace("null", "???"));
+            System.out.println("Something in your text was impossible to translate and was replaced by \"[???]\".\nBut here's my answer:");
+            System.out.println(answer.replace("null", "[???]"));
         }else {
             System.out.println(answer);
         }

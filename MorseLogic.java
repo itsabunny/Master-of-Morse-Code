@@ -99,7 +99,7 @@ public class MorseLogic {
             String morseCode = getCharacter(letter.toLowerCase());
             output.append(morseCode);   //StringBuilder instead of +=
         }
-        return output.toString();
+        return output.toString().trim();
     }
 
     public String morseToEnglish(String morseSequence) {
@@ -109,7 +109,7 @@ public class MorseLogic {
             String letter = getCharacter(morseCharacter);
             output.append(letter);   //StringBuilder instead of +=
         }
-        return output.toString();
+        return output.toString().trim();
     }
 }
 
