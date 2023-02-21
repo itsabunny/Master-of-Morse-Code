@@ -99,7 +99,7 @@ public class MorseLogic {
             String morseCode = getCharacter(letter.toLowerCase());
             output.append(morseCode);   //StringBuilder instead of +=
         }
-        return output.toString().trim();
+        return output.toString().trim();  //error handling if user added extra space at end of string
     }
 
     public String morseToEnglish(String morseSequence) {
@@ -109,7 +109,7 @@ public class MorseLogic {
             String letter = getCharacter(morseCharacter);
             output.append(letter);   //StringBuilder instead of +=
         }
-        return output.toString().trim();
+        return output.toString().trim();  //error handling if user added extra space at end of string
     }
 }
 

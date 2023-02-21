@@ -34,7 +34,7 @@ public class MorseMain {
         System.out.println("and a \" + \" (plus sign surrounded by a single space) between each word):");
         String morseSequence = scan.nextLine();
         String answer = morseLogic.morseToEnglish(morseSequence);
-        if(answer.contains("null")){
+        if(answer.contains("null")){  //error handling if user used non-translatable characters
             System.out.println("Something in your text was impossible to translate and was replaced by \"[???]\".\nBut here's my answer:");
             System.out.println(answer.replace("null", "[???]"));
         }else {
@@ -47,7 +47,7 @@ public class MorseMain {
         System.out.println("Write your English sentence:");
         String text = scan.nextLine();
         String answer = morseLogic.englishToMorse(text);
-        if(answer.contains("null")){
+        if(answer.contains("null")){  //error handling if user used non-translatable characters
             System.out.println("Something in your text was impossible to translate and was replaced by \"[???]\".\nBut here's my answer:");
             System.out.println(answer.replace("null", "[???]"));
         }else {
